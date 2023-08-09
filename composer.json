@@ -1,0 +1,44 @@
+{
+  "name": "avegacms/appstarter",
+  "type": "project",
+  "description": "AvegaCMS starter app",
+  "minimum-stability": "stable",
+  "homepage": "https://avegacms.ru",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "AvegaTeam",
+      "email": "web@avega-soft.ru"
+    }
+  ],
+  "require": {
+    "php": "^8.2",
+    "avegacms/avegacms": "dev-master"
+  },
+  "require-dev": {
+    "fakerphp/faker": "^1.9",
+    "mikey179/vfsstream": "^1.6",
+    "phpunit/phpunit": "^9.1"
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "preferred-install": "dist",
+    "sort-packages": true
+  },
+  "autoload": {
+    "exclude-from-classmap": [
+      "**/Database/Migrations/**"
+    ]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\Support\\": "tests/_support"
+    }
+  },
+  "scripts": {
+    "test": "phpunit"
+  },
+  "support": {
+    "source": "https://avegacms.ru"
+  }
+}
