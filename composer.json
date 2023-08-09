@@ -1,7 +1,8 @@
 {
   "name": "avegacms/appstarter",
+  "minimum-stability": "dev",
   "type": "project",
-  "description": "AvegaCMS starter app",
+  "description": "Codeigniter4 :: AvegaCMS starter app",
   "homepage": "https://avegacms.ru",
   "license": "MIT",
   "authors": [
@@ -12,7 +13,7 @@
   ],
   "require": {
     "php": "^8.0",
-    "avegacms/avegacms": "dev-master"
+    "avegacms/avegacms": "dev-master-dev"
   },
   "require-dev": {
     "fakerphp/faker": "^1.9",
