@@ -10,6 +10,7 @@
       "email": "web@avega-soft.ru"
     }
   ],
+  "minimum-stability": "dev",
   "require": {
     "php": "^8.2",
     "avegacms/avegacms": "dev-master@dev"
