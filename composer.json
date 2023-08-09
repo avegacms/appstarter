@@ -2,7 +2,6 @@
   "name": "avegacms/appstarter",
   "type": "project",
   "description": "AvegaCMS starter app",
-  "minimum-stability": "stable",
   "homepage": "https://avegacms.ru",
   "license": "MIT",
   "authors": [
