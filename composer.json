@@ -13,7 +13,7 @@
   ],
   "require": {
     "php": "^8.0",
-    "avegacms/avegacms": "dev-master-dev"
+    "avegacms/avegacms": "dev-master"
   },
   "require-dev": {
     "fakerphp/faker": "^1.9",
