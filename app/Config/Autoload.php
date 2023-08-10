@@ -44,8 +44,7 @@ class Autoload extends AutoloadConfig
      */
     public $psr4 = [
         APP_NAMESPACE => APPPATH, // For custom app namespace
-        'Config'      => APPPATH . 'Config',
-        'AvegaCms'    => ROOTPATH . 'avegacms' . DIRECTORY_SEPARATOR . 'avegacms'
+        'Config'      => APPPATH . 'Config'
     ];
 
     /**
