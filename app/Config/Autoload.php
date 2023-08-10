@@ -45,6 +45,7 @@ class Autoload extends AutoloadConfig
     public $psr4 = [
         APP_NAMESPACE => APPPATH, // For custom app namespace
         'Config'      => APPPATH . 'Config',
+        'AvegaCms'    => ROOTPATH . 'avegacms' . DIRECTORY_SEPARATOR . 'avegacms'
     ];
 
     /**
@@ -97,4 +98,15 @@ class Autoload extends AutoloadConfig
      * @phpstan-var list<string>
      */
     public $helpers = [];
+
+    public function __construct()
+    {
+        parent::__construct();
+
+        foreach (scandir(ROOTPATH . 'modules') as $file) {
+            if ( ! in_array($file, ['.', '..']) && is_dir(ROOTPATH . 'modules' . DIRECTORY_SEPARATOR . $file)) {
+                $this->psr4['Modules\\' . ucfirst($file)] = ROOTPATH . 'modules' . DIRECTORY_SEPARATOR . $file;
+            }
+        }
+    }
 }
