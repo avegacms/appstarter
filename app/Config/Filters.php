@@ -2,7 +2,7 @@
 
 namespace Config;
 
-use AvegaCms\Filters\{AuthFilter, ThrottlerCorsFilter};
+use AvegaCms\Filters\{AuthenticationFilter, ThrottlerCorsFilter};
 use CodeIgniter\Config\BaseConfig;
 use CodeIgniter\Filters\CSRF;
 use CodeIgniter\Filters\DebugToolbar;
@@ -25,7 +25,7 @@ class Filters extends BaseConfig
 
         // AvegaCMS Filters don't remove
         'throttler'     => ThrottlerCorsFilter::class,
-        'auth'          => AuthFilter::class
+        'auth'          => AuthenticationFilter::class
     ];
 
     /**
