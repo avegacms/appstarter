@@ -123,7 +123,7 @@
 #--------------------------------------------------------------------
 
 # session.driver = 'CodeIgniter\Session\Handlers\FileHandler'
-# session.cookieName = 'ci_session'
+# session.cookieName = 'AvegaCmsSession'
 # session.expiration = 7200
 # session.savePath = null
 # session.matchIP = false
