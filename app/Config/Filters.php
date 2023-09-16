@@ -2,7 +2,7 @@
 
 namespace Config;
 
-use AvegaCms\Filters\{AuthorizationFilter, ThrottlerCorsFilter};
+use AvegaCms\Filters\{AuthorizationFilter, FrontendFilter, ThrottlerCorsFilter};
 use CodeIgniter\Config\BaseConfig;
 use CodeIgniter\Filters\CSRF;
 use CodeIgniter\Filters\DebugToolbar;
@@ -26,6 +26,7 @@ class Filters extends BaseConfig
         'invalidchars'  => InvalidChars::class,
         'secureheaders' => SecureHeaders::class,
 
+        'frontend'  => FrontendFilter::class,
         'throttler' => ThrottlerCorsFilter::class,
         'auth'      => AuthorizationFilter::class
     ];
