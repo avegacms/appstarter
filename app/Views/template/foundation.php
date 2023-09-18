@@ -2,7 +2,6 @@
 
 use AvegaCms\Entities\Seo\{MetaEntity, BreadCrumbsEntity};
 use CodeIgniter\Pager\Pager;
-use CodeIgniter\Pager\PagerRenderer;
 
 /**
  * @var MetaEntity|null $meta
