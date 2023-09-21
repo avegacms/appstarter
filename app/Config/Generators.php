@@ -2,6 +2,7 @@
 
 namespace Config;
 
+use AvegaCms\Config\AvegaCmsGenerators;
 use CodeIgniter\Config\BaseConfig;
 
 class Generators extends BaseConfig
@@ -39,4 +40,13 @@ class Generators extends BaseConfig
         'make:validation'   => 'CodeIgniter\Commands\Generators\Views\validation.tpl.php',
         'session:migration' => 'CodeIgniter\Commands\Generators\Views\migration.tpl.php',
     ];
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->views = [
+            $this->views,
+            ...AvegaCmsGenerators::$views
+        ];
+    }
 }
