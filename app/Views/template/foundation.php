@@ -1,5 +1,6 @@
 <?php
 
+use AvegaCms\Utils\Vite;
 use AvegaCms\Entities\Seo\{MetaEntity, BreadCrumbsEntity};
 use CodeIgniter\Pager\Pager;
 
@@ -36,37 +37,16 @@ use CodeIgniter\Pager\Pager;
 
     <meta name="robots" content="<?php echo $meta->robots ?>">
 
-    <link rel="icon" href="/favicon.ico" sizes="any">
-    <link rel="icon" href="/icon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="icon.png">
+    <!-- Придумать вывод иконок -->
 
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
+    <?php echo Vite::css() ?>
 
-    <link rel="manifest" href="site.webmanifest">
     <meta name="theme-color" content="#fafafa">
 </head>
 
 <body>
-
-<!-- Add your site or application content here -->
-<p>Hello world! This is HTML5 Boilerplate.</p>
-<script src="js/app.js"></script>
-
+<div id="app"></div>
 </body>
 
-<nav aria-label="breadcrumb">
-    <ul class="breadcrumb my-3">
-        <?php foreach ($breadcrumbs as $item): ?>
-            <li class="<?php echo 'breadcrumb-item' . ($item->active ? ' active' : '') ?>" <?php echo ($item->active) ? 'aria-current="page"' : '' ?>>
-                <?php echo ($item->active) ? $item->title : anchor($item->url, $item->title,
-                    ['class' => 'breadcrumb-link']) ?>
-            </li>
-        <?php endforeach; ?>
-    </ul>
-</nav>
-
-<?php echo $template; ?>
-
-
+<?php echo Vite::js() ?>
 </html>
