@@ -1,6 +1,6 @@
 <?php
 
 /**
- * @var $content
+ * @var $page
  */
-d($content);
+d($page);
