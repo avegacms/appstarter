@@ -35,7 +35,7 @@ class Routing extends BaseRouting
      *
      * Default: 'App\Controllers'
      */
-    public string $defaultNamespace = 'AvegaCms\Controllers';
+    public string $defaultNamespace = 'App\Controllers';
 
     /**
      * The default controller to use when no other controller has been
@@ -43,7 +43,7 @@ class Routing extends BaseRouting
      *
      * Default: 'Home'
      */
-    public string $defaultController = 'Content';
+    public string $defaultController = 'Home';
 
     /**
      * The default method to call on the controller when no other
