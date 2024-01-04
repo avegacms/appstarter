@@ -27,12 +27,11 @@ class Kint extends BaseConfig
     */
 
     /**
-     * @var array<int, ConstructablePluginInterface|string>
-     * @phpstan-var list<class-string<ConstructablePluginInterface>|ConstructablePluginInterface>
+     * @var list<class-string<ConstructablePluginInterface>|ConstructablePluginInterface>|null
      */
     public $plugins;
 
-    public int $maxDepth           = 6;
+    public int  $maxDepth          = 6;
     public bool $displayCalledFrom = true;
     public bool $expanded          = false;
 
@@ -41,19 +40,17 @@ class Kint extends BaseConfig
     | RichRenderer Settings
     |--------------------------------------------------------------------------
     */
-    public string $richTheme = 'aante-light.css';
-    public bool $richFolder  = false;
-    public int $richSort     = AbstractRenderer::SORT_FULL;
+    public string $richTheme  = 'aante-light.css';
+    public bool   $richFolder = false;
+    public int    $richSort   = AbstractRenderer::SORT_FULL;
 
     /**
-     * @var array<string, string>
-     * @phpstan-var array<string, class-string<ValuePluginInterface>>
+     * @var array<string, class-string<ValuePluginInterface>>|null
      */
     public $richObjectPlugins;
 
     /**
-     * @var array<string, string>
-     * @phpstan-var array<string, class-string<TabPluginInterface>>
+     * @var array<string, class-string<TabPluginInterface>>|null
      */
     public $richTabPlugins;
 
@@ -65,5 +62,5 @@ class Kint extends BaseConfig
     public bool $cliColors      = true;
     public bool $cliForceUTF8   = false;
     public bool $cliDetectWidth = true;
-    public int $cliMinWidth     = 40;
+    public int  $cliMinWidth    = 40;
 }
