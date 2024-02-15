@@ -1,6 +1,6 @@
 <?php
 
-use AvegaCms\Utils\Vite;
+use AvegaCms\Utilities\Vite;
 use AvegaCms\Entities\Seo\{MetaEntity, BreadCrumbsEntity};
 use CodeIgniter\Pager\Pager;
 
