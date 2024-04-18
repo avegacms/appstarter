@@ -1,12 +1,6 @@
 <?php
 
 /*
- * The environment testing is reserved for PHPUnit testing. It has special
- * conditions built into the framework at various places to assist with that.
- * You can’t use it for your development.
- */
-
-/*
  |--------------------------------------------------------------------------
  | ERROR DISPLAY
  |--------------------------------------------------------------------------
@@ -15,8 +9,10 @@
  |
  | If you set 'display_errors' to '1', CI4's detailed error report will show.
  */
+error_reporting(E_ALL & ~E_DEPRECATED);
+// If you want to suppress more types of errors.
+// error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_STRICT & ~E_USER_NOTICE & ~E_USER_DEPRECATED);
 ini_set('display_errors', '0');
-error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED & ~E_STRICT & ~E_USER_NOTICE & ~E_USER_DEPRECATED);
 
 /*
  |--------------------------------------------------------------------------
