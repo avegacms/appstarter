@@ -1,6 +1,6 @@
 <?php
-
-
+declare(strict_types=1);
+namespace App\Database\Seeds;
 use CodeIgniter\CLI\CLI;
 use CodeIgniter\Database\Seeder;
 use Config\Database;
