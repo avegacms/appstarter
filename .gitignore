@@ -58,6 +58,7 @@ writable/cache/*
 #-------------------------
 modules/*
 !modules/index.html
+!modules/Admin
 
 writable/logs/*
 !writable/logs/index.html
