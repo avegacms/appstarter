@@ -1,6 +1,8 @@
 <?php
 
-use App\Utils\Nuxt;
+declare(strict_types = 1);
+
+use App\Utilities\Nuxt;
 use CodeIgniter\Config\Services;
 use CodeIgniter\View\View;
 
@@ -29,29 +31,29 @@ $nuxt = new Nuxt(
 )
 ?>
 
-<!DOCTYPE html>
-<html lang="<?= $meta->lang ?>">
+<!doctype html>
+<html class="no-js" lang="<?php echo $meta->lang ?>">
 <head>
     <meta charset="utf-8">
-    <title><?= $meta->title ?></title>
-    <meta name="keywords" content="<?= $meta->keywords ?>">
-    <meta name="description" content="<?= $meta->description ?>">
+    <title><?php echo $meta->title ?></title>
+    <meta name="keywords" content="<?php echo $meta->keywords ?>">
+    <meta name="description" content="<?php echo $meta->description ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta property="og:site_name" content="<?= $meta->open_graph->site_name ?>">
-    <meta property="og:locale" content="<?= $meta->open_graph->locale ?>">
-    <meta property="og:title" content="<?= $meta->open_graph->title ?>">
-    <meta property="og:type" content="<?= $meta->open_graph->type ?>">
-    <meta property="og:url" content="<?= $meta->open_graph->url ?>">
-    <meta property="og:image" content="<?= $meta->open_graph->image ?>">
+    <meta property="og:site_name" content="<?php echo $meta->open_graph->site_name ?>">
+    <meta property="og:locale" content="<?php echo $meta->open_graph->locale ?>">
+    <meta property="og:title" content="<?php echo $meta->open_graph->title ?>">
+    <meta property="og:type" content="<?php echo $meta->open_graph->type ?>">
+    <meta property="og:url" content="<?php echo $meta->open_graph->url ?>">
+    <meta property="og:image" content="<?php echo $meta->open_graph->image ?>">
 
     <?php if ($meta->use_multi_locales) : foreach ($meta->alternate as $item): ?>
-        <link rel="alternate" hreflang="<?= $item['hreflang'] ?>" href="<?= $item['href'] ?>">
+        <link rel="alternate" hreflang="<?php echo $item['hreflang'] ?>" href="<?php echo $item['href'] ?>">
     <?php endforeach; endif; ?>
 
-    <link rel="canonical" href="<?= $meta->canonical ?>">
+    <link rel="canonical" href="<?php echo $meta->canonical ?>">
 
-    <meta name="robots" content="<?= $meta->robots ?>">
+    <meta name="robots" content="<?php echo $meta->robots ?>">
 
     <link rel="apple-touch-icon" sizes="57x57" href="/static/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="72x72" href="/static/apple-touch-icon-72x72.png">
@@ -74,8 +76,9 @@ $nuxt = new Nuxt(
         </script>
     <?php endif; ?>
 
-    <?= $nuxt->assets ?>
+    <?php echo $nuxt->assets ?>
 </head>
+
 <body>
 <div id="__nuxt"></div>
 <div id="teleports"></div>
@@ -106,7 +109,6 @@ $nuxt = new Nuxt(
     };
 </script>
 <script type="text/javascript">
-    document.$app = <?= json_encode($app, JSON_UNESCAPED_UNICODE)?>;
+    document.$app = <?php echo json_encode($app, JSON_UNESCAPED_UNICODE)?>;
 </script>
-</body>
 </html>
