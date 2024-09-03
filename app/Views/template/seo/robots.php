@@ -1,18 +1,17 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 use AvegaCms\Utilities\Cms;
 
 helper(['url']);
 
-$allowList    = [
+$allowList = [
     '/uploads/content/',
     '/uploads/modules/',
-    '/uploads/sitemap/'
+    '/uploads/sitemap/',
 ];
 $disallowList = [
-
     '/*?*',
     '/*?',
     '*?page',
@@ -21,9 +20,9 @@ $disallowList = [
     '/search/*?*',
 
     '*utm*=',
-    '*openstat='
+    '*openstat=',
 ];
-$robots       = 'User-agent: *' . PHP_EOL;
+$robots = 'User-agent: *' . PHP_EOL;
 
 if (Cms::settings('core.seo.allowSiteIndexing')) {
     foreach ($allowList as $item) {

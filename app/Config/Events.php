@@ -3,8 +3,6 @@
 namespace Config;
 
 use CodeIgniter\Events\Events;
-use CodeIgniter\Exceptions\FrameworkException;
-use CodeIgniter\HotReloader\HotReloader;
 
 /*
  * --------------------------------------------------------------------

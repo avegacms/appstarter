@@ -11,4 +11,4 @@ d($posts, $content);
 
 ?>
 
-<?php echo $pager->links(template: 'full') ?>
+<?= $pager->links(template: 'full') ?>

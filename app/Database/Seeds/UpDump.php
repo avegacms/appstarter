@@ -1,14 +1,14 @@
 <?php
+
 declare(strict_types=1);
+
 namespace App\Database\Seeds;
-use CodeIgniter\Database\Seeder;
+
 use CodeIgniter\CLI\CLI;
+use CodeIgniter\Database\Seeder;
 
 class UpDump extends Seeder
 {
-    /**
-     * @return void
-     */
     public function run(): void
     {
         if (CLI::prompt('Запустит распаковку дампа базы', ['y', 'n']) === 'n') {
@@ -20,7 +20,7 @@ class UpDump extends Seeder
 
         shell_exec('cd ' . FCPATH . '../ && ./db_backup.sh');
 
-        if ( ! file_exists(WRITEPATH . 'backups/dump.sql')) {
+        if (! file_exists(WRITEPATH . 'backups/dump.sql')) {
             CLI::write('Не удалось найти dump.sql', 'red');
         }
 

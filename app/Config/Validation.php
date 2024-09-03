@@ -27,7 +27,7 @@ class Validation extends BaseConfig
         FileRules::class,
         CreditCardRules::class,
 
-        AvegaCmsRules::class
+        AvegaCmsRules::class,
     ];
 
     /**
