@@ -1,15 +1,15 @@
 <?php
+
 declare(strict_types=1);
+
 namespace App\Database\Seeds;
+
 use CodeIgniter\CLI\CLI;
 use CodeIgniter\Database\Seeder;
 use Config\Database;
 
 class DropAllTablesSeeder extends Seeder
 {
-    /**
-     * @return void
-     */
     public function run(): void
     {
         if (CLI::prompt('Drop all tables?', ['y', 'n']) === 'y') {
@@ -22,6 +22,7 @@ class DropAllTablesSeeder extends Seeder
             if (($tables = $this->db->listTables())) {
                 $i   = 1;
                 $num = count($tables);
+
                 foreach ($tables as $table) {
                     CLI::showProgress($i++, $num);
                     $this->forge->dropTable($this->db->getPrefix() . $table, true, true);

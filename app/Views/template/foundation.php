@@ -1,18 +1,18 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 use App\Utilities\Nuxt;
 use CodeIgniter\Config\Services;
 use CodeIgniter\View\View;
 
 /**
- * @var object|array|null $meta
- * @var object|array|null $breadcrumbs
- * @var string $template
- * @var object|array|null $content
- * @var array $data
- * @var View $this
+ * @var array|object|null $meta
+ * @var array|object|null $breadcrumbs
+ * @var string            $template
+ * @var array|object|null $content
+ * @var array             $data
+ * @var View              $this
  */
 $app = [
     'breadcrumbs' => $breadcrumbs,
@@ -32,28 +32,28 @@ $nuxt = new Nuxt(
 ?>
 
 <!doctype html>
-<html class="no-js" lang="<?php echo $meta->lang ?>">
+<html class="no-js" lang="<?= $meta->lang ?>">
 <head>
     <meta charset="utf-8">
-    <title><?php echo $meta->title ?></title>
-    <meta name="keywords" content="<?php echo $meta->keywords ?>">
-    <meta name="description" content="<?php echo $meta->description ?>">
+    <title><?= $meta->title ?></title>
+    <meta name="keywords" content="<?= $meta->keywords ?>">
+    <meta name="description" content="<?= $meta->description ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta property="og:site_name" content="<?php echo $meta->open_graph->site_name ?>">
-    <meta property="og:locale" content="<?php echo $meta->open_graph->locale ?>">
-    <meta property="og:title" content="<?php echo $meta->open_graph->title ?>">
-    <meta property="og:type" content="<?php echo $meta->open_graph->type ?>">
-    <meta property="og:url" content="<?php echo $meta->open_graph->url ?>">
-    <meta property="og:image" content="<?php echo $meta->open_graph->image ?>">
+    <meta property="og:site_name" content="<?= $meta->open_graph->site_name ?>">
+    <meta property="og:locale" content="<?= $meta->open_graph->locale ?>">
+    <meta property="og:title" content="<?= $meta->open_graph->title ?>">
+    <meta property="og:type" content="<?= $meta->open_graph->type ?>">
+    <meta property="og:url" content="<?= $meta->open_graph->url ?>">
+    <meta property="og:image" content="<?= $meta->open_graph->image ?>">
 
     <?php if ($meta->use_multi_locales) : foreach ($meta->alternate as $item): ?>
-        <link rel="alternate" hreflang="<?php echo $item['hreflang'] ?>" href="<?php echo $item['href'] ?>">
+        <link rel="alternate" hreflang="<?= $item['hreflang'] ?>" href="<?= $item['href'] ?>">
     <?php endforeach; endif; ?>
 
-    <link rel="canonical" href="<?php echo $meta->canonical ?>">
+    <link rel="canonical" href="<?= $meta->canonical ?>">
 
-    <meta name="robots" content="<?php echo $meta->robots ?>">
+    <meta name="robots" content="<?= $meta->robots ?>">
 
     <link rel="apple-touch-icon" sizes="57x57" href="/static/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="72x72" href="/static/apple-touch-icon-72x72.png">
@@ -76,7 +76,7 @@ $nuxt = new Nuxt(
         </script>
     <?php endif; ?>
 
-    <?php echo $nuxt->assets ?>
+    <?= $nuxt->assets ?>
 </head>
 
 <body>
@@ -109,6 +109,6 @@ $nuxt = new Nuxt(
     };
 </script>
 <script type="text/javascript">
-    document.$app = <?php echo json_encode($app, JSON_UNESCAPED_UNICODE)?>;
+    document.$app = <?= json_encode($app, JSON_UNESCAPED_UNICODE)?>;
 </script>
 </html>

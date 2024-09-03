@@ -1,13 +1,13 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace App\Utilities;
 
 class Nuxt
 {
     private array $manifest;
-    public bool   $isDev  = false;
+    public bool $isDev    = false;
     public string $assets = '';
 
     /**

@@ -97,7 +97,7 @@ class Autoload extends AutoloadConfig
         parent::__construct();
 
         foreach (scandir(ROOTPATH . 'modules') as $file) {
-            if ( ! in_array($file, ['.', '..']) && is_dir(ROOTPATH . 'modules' . DIRECTORY_SEPARATOR . $file)) {
+            if (! in_array($file, ['.', '..'], true) && is_dir(ROOTPATH . 'modules' . DIRECTORY_SEPARATOR . $file)) {
                 $this->psr4['Modules\\' . ucfirst($file)] = ROOTPATH . 'modules' . DIRECTORY_SEPARATOR . $file;
             }
         }

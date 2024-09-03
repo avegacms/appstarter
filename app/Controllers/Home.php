@@ -16,7 +16,6 @@ class Home extends AvegaCmsFrontendController
     }
 
     /**
-     * @return ResponseInterface
      * @throws ReflectionException
      */
     public function index(): ResponseInterface

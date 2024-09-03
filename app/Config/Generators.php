@@ -48,7 +48,7 @@ class Generators extends BaseConfig
         parent::__construct();
         $this->views = [
             $this->views,
-            ...AvegaCmsGenerators::$views
+            ...AvegaCmsGenerators::$views,
         ];
     }
 }

@@ -2,7 +2,9 @@
 
 namespace Config;
 
-use AvegaCms\Filters\{AuthorizationFilter, FrontendFilter, ThrottlerFilter};
+use AvegaCms\Filters\AuthorizationFilter;
+use AvegaCms\Filters\FrontendFilter;
+use AvegaCms\Filters\ThrottlerFilter;
 use CodeIgniter\Config\Filters as BaseFilters;
 use CodeIgniter\Filters\Cors;
 use CodeIgniter\Filters\CSRF;
@@ -38,7 +40,7 @@ class Filters extends BaseFilters
 
         'frontend'  => FrontendFilter::class,
         'throttler' => ThrottlerFilter::class,
-        'auth'      => AuthorizationFilter::class
+        'auth'      => AuthorizationFilter::class,
     ];
 
     /**
@@ -77,7 +79,7 @@ class Filters extends BaseFilters
             // 'honeypot',
             // 'csrf',
             // 'invalidchars',
-            'frontend' => ['except' => ['api/*']]
+            'frontend' => ['except' => ['api/*']],
         ],
         'after' => [
             // 'honeypot',
@@ -111,6 +113,6 @@ class Filters extends BaseFilters
      */
     public array $filters = [
         'throttler' => ['before' => ['api/*']],
-        'auth'      => ['before' => ['api/admin', 'api/admin/*']]
+        'auth'      => ['before' => ['api/admin', 'api/admin/*']],
     ];
 }
